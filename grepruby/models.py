@@ -11,15 +11,17 @@ class Article(models.Model):
     author_name = models.CharField(max_length=30)
 
     def __str__(self):
-        return f'{self.title}: {self.author_name}'
+        return f"{self.title}: {self.author_name}"
 
     class Meta:
-        unique_together = ('title', 'author_name')
+        unique_together = ("title", "author_name")
 
 
 class Tag(models.Model):
-    article = models.ForeignKey(Article, on_delete=models.CASCADE, related_name="tags", null=True)
+    article = models.ForeignKey(
+        Article, on_delete=models.CASCADE, related_name="tags", null=True
+    )
     name = models.CharField(max_length=10)
 
     def __str__(self):
-        return f'{self.name}'
+        return f"{self.name}"

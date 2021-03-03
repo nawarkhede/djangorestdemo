@@ -18,7 +18,7 @@ urlpatterns = [
             {"get": "retrieve", "put": "update", "delete": "destroy"}
         ),
     ),
-path(
+    path(
         "tags",
         TagViewSet.as_view(
             {
@@ -29,8 +29,6 @@ path(
     ),
     path(
         "tags/<str:pk>",
-        TagViewSet.as_view(
-            {"get": "retrieve", "put": "update", "delete": "destroy"}
-        ),
+        TagViewSet.as_view({"get": "retrieve", "put": "update", "delete": "destroy"}),
     ),
 ]
